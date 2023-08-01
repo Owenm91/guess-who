@@ -5,3 +5,14 @@ body {
 .card {
     background-color: white;
 }
+
+.header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 160px 160px;
+}
+
+img {
+    width: 100%;
+  }
