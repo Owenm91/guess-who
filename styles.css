@@ -67,4 +67,8 @@ body {
 
 img {
     width: 100%;
-  }
+}
+
+.eliminated {
+    opacity: 20%;
+}
