@@ -74,7 +74,7 @@ let cards = [
       mysteryImg.src = selectedCard.image;
   
       const mysteryName = document.querySelector('.mystery-name');
-      mysteryName.textContent = selectedCard.name;
+      mysteryName.innerHTML = selectedCard.name;
   }
   
   window.addEventListener('load', selectRandomCard);
