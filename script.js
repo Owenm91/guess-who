@@ -64,17 +64,30 @@ let cards = [
        name: 'Kazuo',
        image: 'images/characters_20.jpg'
     }
-   ];
+];
 
-   function selectRandomCard() {
-      const randomIndex = Math.floor(Math.random() * cards.length);
-      const selectedCard = cards[randomIndex];
-  
-      const mysteryImg = document.querySelector('.mystery-card');
-      mysteryImg.src = selectedCard.image;
-  
-      const mysteryName = document.querySelector('.mystery-name');
-      mysteryName.innerHTML = selectedCard.name;
-  }
-  
-  window.addEventListener('load', selectRandomCard);
+function selectRandomCard() {
+   const randomIndex = Math.floor(Math.random() * cards.length);
+   const selectedCard = cards[randomIndex];
+
+   const mysteryImg = document.querySelector('.mystery-card');
+   mysteryImg.src = selectedCard.image;
+
+   const mysteryName = document.querySelector('.mystery-name');
+   mysteryName.innerHTML = selectedCard.name;
+}
+
+function populateCards() {
+   for (let i = 0; i < cards.length; i++) {
+      let cardsImage = cards[i].image
+      let cardsName = cards[i].name
+      document.querySelector('.cards').innerHTML += 
+      '<div class="card" onclick="toggleEliminated(this)">'
+         + '<img src="' + cardsImage + '"/>'
+         + '<span>' + cardsName + '</span>'
+      + '</div>'
+   }
+}
+
+window.addEventListener('load', selectRandomCard);
+window.addEventListener('load', populateCards);
